@@ -1,11 +1,12 @@
 
+
 const Hero = () => {
   return (
     <section className="pt-32 pb-16 bg-gradient-to-br from-blue-50 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
-            Healthy<span className="text-yellow-500">Life</span>
+            Benvenuto in <span className="text-yellow-500">HealthyLife</span>
           </h1>
           
           <div className="flex justify-center mb-8">
@@ -43,3 +44,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
