@@ -1,30 +1,45 @@
 
 const VideoCarousel = () => {
   const videos = [
-    { id: 1, title: "Video 1", placeholder: "Video Formazione" },
-    { id: 2, title: "Video 2", placeholder: "Video Coaching" },
-    { id: 3, title: "Video 3", placeholder: "Video Tecnologia" }
+    { 
+      id: 1, 
+      title: "Formazione", 
+      description: "Eventi formativi e team building",
+      image: "/lovable-uploads/79250853-3926-4521-b9e5-7179d637b923.png"
+    },
+    { 
+      id: 2, 
+      title: "Coaching", 
+      description: "Sessioni di coaching professionale",
+      image: "/lovable-uploads/a404cd40-b3ad-4658-8af5-33cf491c37f3.png"
+    },
+    { 
+      id: 3, 
+      title: "Eventi Aziendali", 
+      description: "Conferenze e meeting internazionali",
+      image: "/lovable-uploads/2524bb98-c971-45e0-b910-a078e4ecc3e2.png"
+    }
   ];
 
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-          Carosello Video
+          I Nostri Eventi
         </h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {videos.map((video) => (
-            <div key={video.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-red-300 to-red-400 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold">{video.title}</h3>
-                  <p className="text-sm opacity-90">{video.placeholder}</p>
-                </div>
+            <div key={video.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-video overflow-hidden">
+                <img 
+                  src={video.image} 
+                  alt={video.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{video.title}</h3>
+                <p className="text-gray-600">{video.description}</p>
               </div>
             </div>
           ))}

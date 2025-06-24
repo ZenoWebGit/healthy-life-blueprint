@@ -28,7 +28,9 @@ const Header = () => {
           <img 
             src="/lovable-uploads/7df541f5-7457-4f09-a6f4-048a290f4777.png" 
             alt="Healthy Life" 
-            className="h-12 w-auto"
+            className={`w-auto transition-all duration-300 ${
+              isScrolled ? 'h-16' : 'h-20'
+            }`}
           />
         </div>
         
