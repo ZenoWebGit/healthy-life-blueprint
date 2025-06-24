@@ -1,11 +1,50 @@
 
+import { useState } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import VideoCarousel from '../components/VideoCarousel';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
+import InfoModal from '../components/InfoModal';
 
 const Index = () => {
+  const [selectedModal, setSelectedModal] = useState<string | null>(null);
+
+  const modalData = {
+    'Chi siamo/Valori': {
+      imageSrc: '/lovable-uploads/85a259f8-6146-4373-9dfa-ea202dec4ca2.png',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    },
+    'Recruiting': {
+      imageSrc: '/lovable-uploads/d44afeb9-7f49-4c80-a82c-c737a0694352.png',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris viverra veniam sit amet lacus cursus de congue. Proin tincidunt fermentum lorem, eu porta arcu pellentesque sed. Vestibulum sed magna at nunc commodo placerat.'
+    },
+    'Tecnologie': {
+      imageSrc: '/lovable-uploads/64478f32-a76d-4ef7-82d5-cc025d5896d2.png',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.'
+    },
+    'Prodotti': {
+      imageSrc: '/lovable-uploads/44f5d4e0-045a-4cc7-8b8e-27963ffcd48a.png',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.'
+    },
+    'Info': {
+      imageSrc: '/lovable-uploads/65a2fbdd-0a04-494f-ad6f-d7a40e650e52.png',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh.'
+    },
+    'Contatti': {
+      imageSrc: '/lovable-uploads/79250853-3926-4521-b9e5-7179d637b923.png',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.'
+    }
+  };
+
+  const openModal = (modalType: string) => {
+    setSelectedModal(modalType);
+  };
+
+  const closeModal = () => {
+    setSelectedModal(null);
+  };
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -80,7 +119,11 @@ const Index = () => {
             
             <div className="grid md:grid-cols-3 gap-6">
               {['Chi siamo/Valori', 'Recruiting', 'Tecnologie'].map((title, index) => (
-                <div key={index} className="bg-gradient-to-br from-red-300 to-red-400 rounded-lg p-6 text-center text-white hover:from-red-400 hover:to-red-500 transition-colors cursor-pointer">
+                <div 
+                  key={index} 
+                  onClick={() => openModal(title)}
+                  className="bg-gradient-to-br from-red-300 to-red-400 rounded-lg p-6 text-center text-white hover:from-red-400 hover:to-red-500 transition-colors cursor-pointer"
+                >
                   <h4 className="text-xl font-semibold mb-2">{title}</h4>
                   <p className="text-sm opacity-90">Scopri di più</p>
                 </div>
@@ -89,7 +132,11 @@ const Index = () => {
             
             <div className="grid md:grid-cols-3 gap-6 mt-6">
               {['Prodotti', 'Info', 'Contatti'].map((title, index) => (
-                <div key={index} className="bg-gradient-to-br from-red-300 to-red-400 rounded-lg p-6 text-center text-white hover:from-red-400 hover:to-red-500 transition-colors cursor-pointer">
+                <div 
+                  key={index} 
+                  onClick={() => openModal(title)}
+                  className="bg-gradient-to-br from-red-300 to-red-400 rounded-lg p-6 text-center text-white hover:from-red-400 hover:to-red-500 transition-colors cursor-pointer"
+                >
                   <h4 className="text-xl font-semibold mb-2">{title}</h4>
                   <p className="text-sm opacity-90">Scopri di più</p>
                 </div>
@@ -297,6 +344,17 @@ const Index = () => {
       <VideoCarousel />
       <ContactForm />
       <Footer />
+
+      {/* Modali */}
+      {selectedModal && (
+        <InfoModal
+          isOpen={true}
+          onClose={closeModal}
+          title={selectedModal}
+          imageSrc={modalData[selectedModal as keyof typeof modalData].imageSrc}
+          description={modalData[selectedModal as keyof typeof modalData].description}
+        />
+      )}
     </div>
   );
 };
