@@ -22,7 +22,7 @@ const Footer = () => {
               <p>📍 Via del commercio 3</p>
               <p>Misterbianco, Italy, 95045</p>
               <p>📞 095 403 8426</p>
-              <p>✉️ info@healthylifesrls.it</p>
+              <p>✉️ risorseumanehl.ct@gmail.com</p>
             </div>
           </div>
           
