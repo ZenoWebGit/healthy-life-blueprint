@@ -24,6 +24,16 @@ const Header = () => {
       isScrolled ? 'bg-white shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm py-4'
     }`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
+        <div className="flex items-center">
+          <img 
+            src="/lovable-uploads/7df541f5-7457-4f09-a6f4-048a290f4777.png" 
+            alt="Healthy Life Logo" 
+            className={`transition-all duration-300 ${
+              isScrolled ? 'w-auto h-8' : 'w-auto h-10'
+            }`}
+          />
+        </div>
+
         <nav className="hidden md:flex space-x-8">
           <button 
             onClick={() => scrollToSection('formazione')}
