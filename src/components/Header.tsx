@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 
 const Header = () => {
@@ -29,7 +28,7 @@ const Header = () => {
             src="/lovable-uploads/7df541f5-7457-4f09-a6f4-048a290f4777.png" 
             alt="Healthy Life Logo" 
             className={`transition-all duration-300 ${
-              isScrolled ? 'w-auto h-8' : 'w-auto h-10'
+              isScrolled ? 'w-auto h-24' : 'w-auto h-32'
             }`}
           />
         </div>
