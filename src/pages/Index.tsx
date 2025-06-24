@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import VideoCarousel from '../components/VideoCarousel';
@@ -44,6 +44,19 @@ const Index = () => {
   const closeModal = () => {
     setSelectedModal(null);
   };
+
+  // Ascolta gli eventi dal VideoCarousel
+  useEffect(() => {
+    const handleOpenModal = (event: CustomEvent) => {
+      openModal(event.detail);
+    };
+
+    window.addEventListener('openModal', handleOpenModal as EventListener);
+    
+    return () => {
+      window.removeEventListener('openModal', handleOpenModal as EventListener);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen">

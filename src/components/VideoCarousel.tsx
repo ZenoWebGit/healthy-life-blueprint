@@ -21,6 +21,13 @@ const VideoCarousel = () => {
     }
   ];
 
+  // Ricevi la funzione openModal come prop dal componente padre
+  const handleCardClick = (title: string) => {
+    // Trova il componente padre e chiama openModal
+    const event = new CustomEvent('openModal', { detail: title });
+    window.dispatchEvent(event);
+  };
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -29,7 +36,11 @@ const VideoCarousel = () => {
         </h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {videos.map((video) => (
-            <div key={video.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div 
+              key={video.id} 
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+              onClick={() => handleCardClick(video.title)}
+            >
               <div className="aspect-video overflow-hidden">
                 <img 
                   src={video.image} 
