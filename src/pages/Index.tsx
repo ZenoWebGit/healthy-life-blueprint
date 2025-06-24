@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -34,6 +33,18 @@ const Index = () => {
     'Contatti': {
       imageSrc: '/lovable-uploads/79250853-3926-4521-b9e5-7179d637b923.png',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.'
+    },
+    'Formazione': {
+      imageSrc: '/lovable-uploads/79250853-3926-4521-b9e5-7179d637b923.png',
+      description: 'Eventi formativi e team building. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Selezioniamo candidati motivati alla ricerca di nuove opportunità e li guidiamo in un percorso formativo strutturato. L\'obiettivo è formare nuovi imprenditori autonomi, in grado di creare valore e replicare il nostro modello nelle proprie città.'
+    },
+    'Coaching': {
+      imageSrc: '/lovable-uploads/a404cd40-b3ad-4658-8af5-33cf491c37f3.png',
+      description: 'Sessioni di coaching professionale. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ogni persona è unica. Il nostro approccio al coaching tiene conto delle caratteristiche individuali, delle ambizioni e delle potenzialità. Attraverso incontri dedicati, ascolto attivo e analisi dei bisogni, elaboriamo piani personalizzati di crescita.'
+    },
+    'Eventi Aziendali': {
+      imageSrc: '/lovable-uploads/2524bb98-c971-45e0-b910-a078e4ecc3e2.png',
+      description: 'Conferenze e meeting internazionali. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Organizziamo eventi aziendali di alto livello per promuovere la crescita professionale e il networking. I nostri eventi sono progettati per creare valore e opportunità di business per tutti i partecipanti.'
     }
   };
 
@@ -359,7 +370,7 @@ const Index = () => {
       <Footer />
 
       {/* Modali */}
-      {selectedModal && (
+      {selectedModal && modalData[selectedModal as keyof typeof modalData] && (
         <InfoModal
           isOpen={true}
           onClose={closeModal}
