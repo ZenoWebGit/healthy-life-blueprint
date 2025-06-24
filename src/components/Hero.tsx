@@ -1,12 +1,21 @@
 
 const Hero = () => {
   return (
-    <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-white">
+    <section className="pt-32 pb-16 bg-gradient-to-br from-blue-50 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
             Healthy<span className="text-yellow-500">Life</span>
           </h1>
+          
+          <div className="flex justify-center mb-8">
+            <img 
+              src="/lovable-uploads/7df541f5-7457-4f09-a6f4-048a290f4777.png" 
+              alt="Healthy Life Logo" 
+              className="w-auto h-40 md:h-48 lg:h-56"
+            />
+          </div>
+          
           <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
             HealthyLife è un'azienda specializzata in coaching e tutoring professionale.
             <br />
