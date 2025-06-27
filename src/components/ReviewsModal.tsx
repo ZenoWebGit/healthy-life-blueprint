@@ -40,6 +40,18 @@ const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
             </div>
           </div>
           
+          <div className="flex justify-center">
+            <div className="aspect-[9/16] w-full max-w-md rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/MMTrvmm54LM"
+                title="Recensione 3"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+          
           <div className="text-center">
             <p className="text-gray-600">
               Guarda cosa dicono i nostri clienti sui prodotti Healthy Life
