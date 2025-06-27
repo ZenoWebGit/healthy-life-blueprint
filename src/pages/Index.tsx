@@ -5,9 +5,15 @@ import VideoCarousel from '../components/VideoCarousel';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import InfoModal from '../components/InfoModal';
+import ReviewsModal from '../components/ReviewsModal';
+import { Button } from '@/components/ui/button';
 
 const Index = () => {
   const [selectedModal, setSelectedModal] = useState<string | null>(null);
+  const [reviewsModal, setReviewsModal] = useState<{ isOpen: boolean; productName: string }>({
+    isOpen: false,
+    productName: ''
+  });
 
   const modalData = {
     'Chi siamo/Valori': {
@@ -54,6 +60,14 @@ const Index = () => {
 
   const closeModal = () => {
     setSelectedModal(null);
+  };
+
+  const openReviewsModal = (productName: string) => {
+    setReviewsModal({ isOpen: true, productName });
+  };
+
+  const closeReviewsModal = () => {
+    setReviewsModal({ isOpen: false, productName: '' });
   };
 
   // Ascolta gli eventi dal VideoCarousel
@@ -126,7 +140,15 @@ const Index = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Mondo Hydro</h3>
-                  <p className="text-gray-600">Innovativo sistema di trattamento dell'acqua basato sulla tecnologia dell'iperfiltrazione.</p>
+                  <p className="text-gray-600 mb-4">Innovativo sistema di trattamento dell'acqua basato sulla tecnologia dell'iperfiltrazione.</p>
+                  <div className="text-center">
+                    <Button 
+                      onClick={() => openReviewsModal('Mondo Hydro')}
+                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                    >
+                      Guarda recensioni
+                    </Button>
+                  </div>
                 </div>
               </div>
 
@@ -140,7 +162,15 @@ const Index = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Biofarmantalgic Plus</h3>
-                  <p className="text-gray-600">Sfruttando le nanotecnologie, agiamo sul sistema cellulare con effetti antalgici e antiossidanti.</p>
+                  <p className="text-gray-600 mb-4">Sfruttando le nanotecnologie, agiamo sul sistema cellulare con effetti antalgici e antiossidanti.</p>
+                  <div className="text-center">
+                    <Button 
+                      onClick={() => openReviewsModal('Biofarmantalgic Plus')}
+                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                    >
+                      Guarda recensioni
+                    </Button>
+                  </div>
                 </div>
               </div>
 
@@ -154,7 +184,15 @@ const Index = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">The Coffy Way</h3>
-                  <p className="text-gray-600">Marchio unico che ti consente di scegliere tra una vasta gamma di miscele, nella quantità e compatibilità che preferisci.</p>
+                  <p className="text-gray-600 mb-4">Marchio unico che ti consente di scegliere tra una vasta gamma di miscele, nella quantità e compatibilità che preferisci.</p>
+                  <div className="text-center">
+                    <Button 
+                      onClick={() => openReviewsModal('The Coffy Way')}
+                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                    >
+                      Guarda recensioni
+                    </Button>
+                  </div>
                 </div>
               </div>
 
@@ -169,7 +207,15 @@ const Index = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Mondo Tecnologia Aria</h3>
-                  <p className="text-gray-600">Attraverso la tecnologia Active Pure, garantiamo un'aria più pulita negli ambienti interni.</p>
+                  <p className="text-gray-600 mb-4">Attraverso la tecnologia Active Pure, garantiamo un'aria più pulita negli ambienti interni.</p>
+                  <div className="text-center">
+                    <Button 
+                      onClick={() => openReviewsModal('Mondo Tecnologia Aria')}
+                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                    >
+                      Guarda recensioni
+                    </Button>
+                  </div>
                 </div>
               </div>
 
@@ -183,7 +229,15 @@ const Index = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Riposo</h3>
-                  <p className="text-gray-600">Ricerchiamo il sistema di riposo ideale per il benessere quotidiano.</p>
+                  <p className="text-gray-600 mb-4">Ricerchiamo il sistema di riposo ideale per il benessere quotidiano.</p>
+                  <div className="text-center">
+                    <Button 
+                      onClick={() => openReviewsModal('Riposo')}
+                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                    >
+                      Guarda recensioni
+                    </Button>
+                  </div>
                 </div>
               </div>
 
@@ -197,7 +251,15 @@ const Index = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Anima Genomics</h3>
-                  <p className="text-gray-600">Siamo leader nella genomica, all'avanguardia globalmente. Offriamo test del DNA avanzati e completi.</p>
+                  <p className="text-gray-600 mb-4">Siamo leader nella genomica, all'avanguardia globalmente. Offriamo test del DNA avanzati e completi.</p>
+                  <div className="text-center">
+                    <Button 
+                      onClick={() => openReviewsModal('Anima Genomics')}
+                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                    >
+                      Guarda recensioni
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -477,6 +539,13 @@ const Index = () => {
           description={modalData[selectedModal as keyof typeof modalData].description}
         />
       )}
+
+      {/* Modal Recensioni */}
+      <ReviewsModal
+        isOpen={reviewsModal.isOpen}
+        onClose={closeReviewsModal}
+        productName={reviewsModal.productName}
+      />
     </div>
   );
 };
