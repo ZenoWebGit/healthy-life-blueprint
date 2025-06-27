@@ -107,6 +107,104 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Sezione I nostri Prodotti */}
+      <section id="prodotti" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
+              I nostri Prodotti
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Prima riga */}
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/38f9c72b-007f-4455-af15-5ba68f9b6edb.png" 
+                    alt="Mondo Hydro"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Mondo Hydro</h3>
+                  <p className="text-gray-600">Innovativo sistema di trattamento dell'acqua basato sulla tecnologia dell'iperfiltrazione.</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/4fe27953-13d3-4c56-a367-4e5bd0fc65f9.png" 
+                    alt="Biofarmantalgic Plus"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Biofarmantalgic Plus</h3>
+                  <p className="text-gray-600">Sfruttando le nanotecnologie, agiamo sul sistema cellulare con effetti antalgici e antiossidanti.</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/6cf7fc8e-711c-4913-98d7-ae5565d6846e.png" 
+                    alt="The Coffy Way"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">The Coffy Way</h3>
+                  <p className="text-gray-600">Marchio unico che ti consente di scegliere tra una vasta gamma di miscele, nella quantità e compatibilità che preferisci.</p>
+                </div>
+              </div>
+
+              {/* Seconda riga */}
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/5d103475-f959-427d-86d4-5d00c35ed9ac.png" 
+                    alt="Mondo Tecnologia Aria"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Mondo Tecnologia Aria</h3>
+                  <p className="text-gray-600">Attraverso la tecnologia Active Pure, garantiamo un'aria più pulita negli ambienti interni.</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/3f11de24-9e7f-4680-a50c-96ce3d8d2ca4.png" 
+                    alt="Riposo"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Riposo</h3>
+                  <p className="text-gray-600">Ricerchiamo il sistema di riposo ideale per il benessere quotidiano.</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/5afa40bd-f6ad-425f-89a5-515d975589a0.png" 
+                    alt="Anima Genomics"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Anima Genomics</h3>
+                  <p className="text-gray-600">Siamo leader nella genomica, all'avanguardia globalmente. Offriamo test del DNA avanzati e completi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Sezione Coaching */}
       <section id="coaching" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
