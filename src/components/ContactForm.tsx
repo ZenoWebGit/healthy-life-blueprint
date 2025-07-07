@@ -9,7 +9,8 @@ const ContactForm = () => {
     phone: '',
     message: '',
     contactReason: '',
-    cv: null as File | null
+    cv: null as File | null,
+    privacyConsent: false
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -22,6 +23,13 @@ const ContactForm = () => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
+    });
+  };
+
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      privacyConsent: e.target.checked
     });
   };
 
@@ -154,13 +162,28 @@ const ContactForm = () => {
                   placeholder="Raccontaci qualcosa di te e delle tue motivazioni..."
                 ></textarea>
               </div>
+
+              <div className="flex items-start space-x-3">
+                <input
+                  type="checkbox"
+                  id="privacyConsent"
+                  name="privacyConsent"
+                  checked={formData.privacyConsent}
+                  onChange={handleCheckboxChange}
+                  className="mt-1 h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded"
+                  required
+                />
+                <label htmlFor="privacyConsent" className="text-white text-sm leading-relaxed">
+                  Acconsento al trattamento dei dati personali, il consenso è necessario al fine di accedere al servizio. I dati saranno trattati come previsto dalle vigenti normative di sicurezza. Informativa sulla Privacy Policy
+                </label>
+              </div>
               
               <div className="text-center">
                 <button
                   type="submit"
                   className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
-                  Invia Candidatura
+                  Invia
                 </button>
               </div>
             </form>

@@ -1,3 +1,4 @@
+
 const Hero = () => {
   return (
     <section className="pt-32 pb-16 bg-gradient-to-br from-blue-50 to-white mt-20">
@@ -9,7 +10,7 @@ const Hero = () => {
           
           <div className="flex justify-center mb-8">
             <img 
-              src="/lovable-uploads/7df541f5-7457-4f09-a6f4-048a290f4777.png" 
+              src="/lovable-uploads/c9f99e36-e78c-49e4-9813-abeac414e7b9.png" 
               alt="Healthy Life Logo" 
               className="w-auto h-40 md:h-48 lg:h-56"
             />
