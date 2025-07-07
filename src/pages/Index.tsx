@@ -47,7 +47,7 @@ const Index = () => {
     },
     'Coaching': {
       imageSrc: '/lovable-uploads/a404cd40-b3ad-4658-8af5-33cf491c37f3.png',
-      description: 'Sessioni di coaching professionale. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ogni persona è unica. Il nostro approccio al coaching tiene conto delle caratteristiche individuali, delle ambizioni e delle potenzialità. Attraverso incontri dedicati, ascolto attivo e analisi dei bisogni, elaboriamo piani personalizzati di crescita.'
+      description: 'Ogni individuo è unico, con obiettivi, sfide e talenti distinti. Il nostro approccio di coaching si basa su una profonda comprensione di queste caratteristiche individuali. Attraverso incontri, ascolto attivo e un\'analisi approfondita delle esigenze di ogni membro del team, sviluppiamo piani di coaching personalizzati. Questi piani mettono in evidenza le aree di miglioramento specifiche e identificano le strategie necessarie per superare gli ostacoli e raggiungere i risultati desiderati.'
     },
     'Eventi Aziendali': {
       imageSrc: '/lovable-uploads/2524bb98-c971-45e0-b910-a078e4ecc3e2.png',
