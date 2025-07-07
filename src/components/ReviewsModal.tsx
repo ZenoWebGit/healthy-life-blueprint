@@ -28,7 +28,7 @@ const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
                 controls
                 preload="metadata"
               >
-                <source src="http://zenoweb.it/videotest.mp4" type="video/mp4" />
+                <source src="https://zenoweb.it/recensionecaffe.mp4" type="video/mp4" />
                 Il tuo browser non supporta la riproduzione video.
               </video>
             </div>
@@ -39,7 +39,7 @@ const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
                 controls
                 preload="metadata"
               >
-                <source src="http://zenoweb.it/videotest.mp4" type="video/mp4" />
+                <source src="https://zenoweb.it/recensionecaffe2.mp4" type="video/mp4" />
                 Il tuo browser non supporta la riproduzione video.
               </video>
             </div>
