@@ -45,23 +45,19 @@ const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
             </div>
           </div>
           
-          <div className="flex justify-center">
-            <div className="aspect-[9/16] w-full max-w-md rounded-lg overflow-hidden bg-gray-100">
-              <video 
-                className="w-full h-full object-cover"
-                controls
-                preload="metadata"
-              >
-                <source src="http://zenoweb.it/videotest.mp4" type="video/mp4" />
-                Il tuo browser non supporta la riproduzione video.
-              </video>
-            </div>
-          </div>
-          
-          <div className="text-center">
+          <div className="text-center space-y-4">
             <p className="text-gray-600">
               Guarda cosa dicono i nostri clienti sui prodotti Healthy Life
             </p>
+            
+            <a 
+              href="https://beacons.ai/healthylifesrls?fbclid=PAZXh0bgNhZW0CMTEAAadA3kn5URCJFuHaXGYZ1xrtyK4DuMLS2UTVxzF-jG5J4RIyF2tndUjzm0CEyg_aem_s_jh-v8MUe4LERMSTByk_A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+            >
+              Prenota consulenza Gratuita
+            </a>
           </div>
         </div>
       </DialogContent>
