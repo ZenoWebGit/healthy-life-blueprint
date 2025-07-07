@@ -22,38 +22,38 @@ const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
         
         <div className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="aspect-[9/16] rounded-lg overflow-hidden">
+            <div className="aspect-[9/16] rounded-lg overflow-hidden bg-gray-100">
               <iframe
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&origin=https://lovableproject.com"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1&rel=0&modestbranding=1"
                 title="Recensione prodotto Healthy Life 1"
                 className="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                referrerPolicy="strict-origin-when-cross-origin"
+                loading="lazy"
               />
             </div>
             
-            <div className="aspect-[9/16] rounded-lg overflow-hidden">
+            <div className="aspect-[9/16] rounded-lg overflow-hidden bg-gray-100">
               <iframe
-                src="https://www.youtube.com/embed/ScMzIvxBSi4?enablejsapi=1&origin=https://lovableproject.com"
+                src="https://www.youtube.com/embed/jNQXAC9IVRw?autoplay=0&mute=1&rel=0&modestbranding=1"
                 title="Recensione prodotto Healthy Life 2"
                 className="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                referrerPolicy="strict-origin-when-cross-origin"
+                loading="lazy"
               />
             </div>
           </div>
           
           <div className="flex justify-center">
-            <div className="aspect-[9/16] w-full max-w-md rounded-lg overflow-hidden">
+            <div className="aspect-[9/16] w-full max-w-md rounded-lg overflow-hidden bg-gray-100">
               <iframe
-                src="https://www.youtube.com/embed/jNQXAC9IVRw?enablejsapi=1&origin=https://lovableproject.com"
+                src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=0&mute=1&rel=0&modestbranding=1"
                 title="Recensione prodotto Healthy Life 3"
                 className="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                referrerPolicy="strict-origin-when-cross-origin"
+                loading="lazy"
               />
             </div>
           </div>
