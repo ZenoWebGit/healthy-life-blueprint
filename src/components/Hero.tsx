@@ -16,11 +16,11 @@ const Hero = () => {
           </div>
           
           <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
-            HealthyLife è un'azienda specializzata in coaching e tutoring professionale.
+            Healthy life srls è un azienda commerciale di vendita diretta strutturata e specializzata nella formazione di talenti e nella ricerca di risorse talentuose!
             <br />
-            Accompagniamo aspiranti imprenditori in un percorso reale di crescita personale e professionale, 
-            basato su valori autentici e strategie efficaci.
+            L'accademia è stata creata per formare i futuri imprenditori, è un percorso reale di crescita professionale basato su temi sensibili sul benessere, attraverso tutoring di tecniche di comunicazione e di vendita
           </p>
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={() => document.getElementById('formazione')?.scrollIntoView({ behavior: 'smooth' })}
