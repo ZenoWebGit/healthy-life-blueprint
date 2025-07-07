@@ -9,6 +9,7 @@ interface ReviewsModalProps {
 
 const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
   const isCoffyWay = productName === "The Coffy Way";
+  const isBiofarmantalgicPlus = productName === "Biofarmantalgic Plus";
   
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -20,6 +21,8 @@ const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
           <DialogDescription>
             {isCoffyWay 
               ? "Guarda le recensioni video dei nostri clienti sui prodotti Healthy Life"
+              : isBiofarmantalgicPlus
+              ? "Guarda le testimonianze dei nostri clienti su Biofarmantalgic Plus"
               : `Recensioni per ${productName}`
             }
           </DialogDescription>
@@ -55,6 +58,47 @@ const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
               <div className="text-center space-y-4">
                 <p className="text-gray-600">
                   Guarda cosa dicono i nostri clienti sui prodotti Healthy Life
+                </p>
+                
+                <a 
+                  href="https://beacons.ai/healthylifesrls?fbclid=PAZXh0bgNhZW0CMTEAAadA3kn5URCJFuHaXGYZ1xrtyK4DuMLS2UTVxzF-jG5J4RIyF2tndUjzm0CEyg_aem_s_jh-v8MUe4LERMSTByk_A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                >
+                  Prenota consulenza Gratuita
+                </a>
+              </div>
+            </>
+          ) : isBiofarmantalgicPlus ? (
+            <>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+                  <video 
+                    className="w-full h-full object-cover"
+                    controls
+                    preload="metadata"
+                  >
+                    <source src="https://www.biofarmantalgicplus.com/wp-content/uploads/2019/06/sindrome-gambe-senza-riposo.mp4" type="video/mp4" />
+                    Il tuo browser non supporta la riproduzione video.
+                  </video>
+                </div>
+                
+                <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+                  <video 
+                    className="w-full h-full object-cover"
+                    controls
+                    preload="metadata"
+                  >
+                    <source src="https://www.biofarmantalgicplus.com/wp-content/uploads/2014/12/fasciano_rosa.mp4" type="video/mp4" />
+                    Il tuo browser non supporta la riproduzione video.
+                  </video>
+                </div>
+              </div>
+              
+              <div className="text-center space-y-4">
+                <p className="text-gray-600">
+                  Scopri le testimonianze dei nostri clienti su Biofarmantalgic Plus
                 </p>
                 
                 <a 
