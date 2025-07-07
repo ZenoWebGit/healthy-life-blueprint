@@ -1,11 +1,10 @@
-
 const VideoCarousel = () => {
   const videos = [
     { 
       id: 1, 
       title: "Formazione", 
       description: "Eventi formativi e team building",
-      image: "/lovable-uploads/79250853-3926-4521-b9e5-7179d637b923.png"
+      image: "/lovable-uploads/d0deee4c-2c43-4b4f-aee4-b95f32bfb938.png"
     },
     { 
       id: 2, 
@@ -21,9 +20,7 @@ const VideoCarousel = () => {
     }
   ];
 
-  // Ricevi la funzione openModal come prop dal componente padre
   const handleCardClick = (title: string) => {
-    // Trova il componente padre e chiama openModal
     const event = new CustomEvent('openModal', { detail: title });
     window.dispatchEvent(event);
   };
