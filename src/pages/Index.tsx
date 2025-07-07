@@ -112,8 +112,8 @@ const Index = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="/lovable-uploads/02571b68-c517-424b-b6d2-c91d82321a29.png" 
-                  alt="Evento di formazione aziendale"
+                  src="/lovable-uploads/7df541f5-7457-4f09-a6f4-048a290f4777.png" 
+                  alt="Eventi formativi e team building"
                   className="w-full h-80 object-cover"
                 />
               </div>
