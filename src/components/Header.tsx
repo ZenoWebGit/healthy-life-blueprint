@@ -42,22 +42,22 @@ const Header = () => {
             Formazione
           </button>
           <button 
+            onClick={() => scrollToSection('prodotti')}
+            className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+          >
+            Prodotti
+          </button>
+          <button 
             onClick={() => scrollToSection('coaching')}
             className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
           >
             Coaching
           </button>
           <button 
-            onClick={() => scrollToSection('tecnologia')}
-            className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-          >
-            Tecnologia e Benessere
-          </button>
-          <button 
             onClick={() => scrollToSection('progetti')}
             className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
           >
-            Progetti e Qualità
+            Progetti
           </button>
           <button 
             onClick={() => scrollToSection('recruiting')}
@@ -69,7 +69,19 @@ const Header = () => {
             onClick={() => scrollToSection('valori')}
             className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
           >
-            I Nostri Valori
+            Valori
+          </button>
+          <button 
+            onClick={() => scrollToSection('eventi')}
+            className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+          >
+            Eventi
+          </button>
+          <button 
+            onClick={() => scrollToSection('contatti')}
+            className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+          >
+            Contatti
           </button>
         </nav>
 
