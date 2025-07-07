@@ -6,9 +6,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <img 
-              src="/lovable-uploads/7df541f5-7457-4f09-a6f4-048a290f4777.png" 
+              src="/lovable-uploads/c9f99e36-e78c-49e4-9813-abeac414e7b9.png" 
               alt="Healthy Life" 
-              className="h-12 w-auto mb-4 filter brightness-0 invert"
+              className="h-20 w-auto mb-4"
             />
             <p className="text-gray-400">
               Accompagniamo aspiranti imprenditori in un percorso reale di crescita 
