@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -300,32 +299,6 @@ const Index = () => {
                   Coaching efficace per superare ostacoli e liberare il potenziale.
                 </p>
               </div>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-6">
-              {['Chi siamo/Valori', 'Recruiting', 'Tecnologie'].map((title, index) => (
-                <div 
-                  key={index} 
-                  onClick={() => openModal(title)}
-                  className="bg-gradient-to-br from-red-300 to-red-400 rounded-lg p-6 text-center text-white hover:from-red-400 hover:to-red-500 transition-colors cursor-pointer"
-                >
-                  <h4 className="text-xl font-semibold mb-2">{title}</h4>
-                  <p className="text-sm opacity-90">Scopri di più</p>
-                </div>
-              ))}
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-6 mt-6">
-              {['Prodotti', 'Info', 'Contatti'].map((title, index) => (
-                <div 
-                  key={index} 
-                  onClick={() => openModal(title)}
-                  className="bg-gradient-to-br from-red-300 to-red-400 rounded-lg p-6 text-center text-white hover:from-red-400 hover:to-red-500 transition-colors cursor-pointer"
-                >
-                  <h4 className="text-xl font-semibold mb-2">{title}</h4>
-                  <p className="text-sm opacity-90">Scopri di più</p>
-                </div>
-              ))}
             </div>
           </div>
         </div>
