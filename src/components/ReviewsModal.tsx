@@ -1,5 +1,5 @@
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 interface ReviewsModalProps {
   isOpen: boolean;
@@ -15,27 +15,32 @@ const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
           <DialogTitle className="text-2xl font-bold text-gray-900 mb-4">
             Recensioni - {productName}
           </DialogTitle>
+          <DialogDescription>
+            Guarda le recensioni video dei nostri clienti sui prodotti Healthy Life
+          </DialogDescription>
         </DialogHeader>
         
         <div className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="aspect-[9/16] rounded-lg overflow-hidden">
               <iframe
-                src="https://www.youtube.com/embed/Ttye_hqBCMs"
-                title="Recensione 1"
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&origin=https://lovableproject.com"
+                title="Recensione prodotto Healthy Life 1"
+                className="w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
               />
             </div>
             
             <div className="aspect-[9/16] rounded-lg overflow-hidden">
               <iframe
-                src="https://www.youtube.com/embed/Ttye_hqBCMs"
-                title="Recensione 2"
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                src="https://www.youtube.com/embed/ScMzIvxBSi4?enablejsapi=1&origin=https://lovableproject.com"
+                title="Recensione prodotto Healthy Life 2"
+                className="w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
               />
             </div>
           </div>
@@ -43,11 +48,12 @@ const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
           <div className="flex justify-center">
             <div className="aspect-[9/16] w-full max-w-md rounded-lg overflow-hidden">
               <iframe
-                src="https://www.youtube.com/embed/MMTrvmm54LM"
-                title="Recensione 3"
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                src="https://www.youtube.com/embed/jNQXAC9IVRw?enablejsapi=1&origin=https://lovableproject.com"
+                title="Recensione prodotto Healthy Life 3"
+                className="w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
               />
             </div>
           </div>
