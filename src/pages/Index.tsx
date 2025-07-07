@@ -43,7 +43,7 @@ const Index = () => {
     },
     'Formazione': {
       imageSrc: '/lovable-uploads/79250853-3926-4521-b9e5-7179d637b923.png',
-      description: 'Eventi formativi e team building. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Selezioniamo candidati motivati alla ricerca di nuove opportunità e li guidiamo in un percorso formativo strutturato. L\'obiettivo è formare nuovi imprenditori autonomi, in grado di creare valore e replicare il nostro modello nelle proprie città.'
+      description: 'Al centro del nostro lavoro, poniamo la risorsa umana come protagonista assoluto, seguendola e prendendoci cura di essa in modo scrupoloso.'
     },
     'Coaching': {
       imageSrc: '/lovable-uploads/a404cd40-b3ad-4658-8af5-33cf491c37f3.png',
