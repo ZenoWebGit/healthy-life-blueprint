@@ -23,38 +23,38 @@ const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
         <div className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="aspect-[9/16] rounded-lg overflow-hidden bg-gray-100">
-              <iframe
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1&rel=0&modestbranding=1"
-                title="Recensione prodotto Healthy Life 1"
-                className="w-full h-full border-0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                loading="lazy"
-              />
+              <video 
+                className="w-full h-full object-cover"
+                controls
+                preload="metadata"
+              >
+                <source src="http://zenoweb.it/videotest.mp4" type="video/mp4" />
+                Il tuo browser non supporta la riproduzione video.
+              </video>
             </div>
             
             <div className="aspect-[9/16] rounded-lg overflow-hidden bg-gray-100">
-              <iframe
-                src="https://www.youtube.com/embed/jNQXAC9IVRw?autoplay=0&mute=1&rel=0&modestbranding=1"
-                title="Recensione prodotto Healthy Life 2"
-                className="w-full h-full border-0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                loading="lazy"
-              />
+              <video 
+                className="w-full h-full object-cover"
+                controls
+                preload="metadata"
+              >
+                <source src="http://zenoweb.it/videotest.mp4" type="video/mp4" />
+                Il tuo browser non supporta la riproduzione video.
+              </video>
             </div>
           </div>
           
           <div className="flex justify-center">
             <div className="aspect-[9/16] w-full max-w-md rounded-lg overflow-hidden bg-gray-100">
-              <iframe
-                src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=0&mute=1&rel=0&modestbranding=1"
-                title="Recensione prodotto Healthy Life 3"
-                className="w-full h-full border-0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                loading="lazy"
-              />
+              <video 
+                className="w-full h-full object-cover"
+                controls
+                preload="metadata"
+              >
+                <source src="http://zenoweb.it/videotest.mp4" type="video/mp4" />
+                Il tuo browser non supporta la riproduzione video.
+              </video>
             </div>
           </div>
           
