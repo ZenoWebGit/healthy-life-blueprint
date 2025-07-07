@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -325,43 +326,6 @@ const Index = () => {
                   <p className="text-sm opacity-90">Scopri di più</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sezione Tecnologia */}
-      <section id="tecnologia" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center text-gray-900 mb-8">
-              Tecnologia e Benessere
-            </h2>
-            <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-              <div>
-                <h3 className="text-2xl font-semibold text-yellow-600 mb-4">
-                  Innovazione e salute: tecnologie al servizio delle persone
-                </h3>
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  Promuoviamo il benessere attraverso soluzioni tecnologiche all'avanguardia. 
-                  Progetti come Active Pure, Hydro System, Biofarmantalgicplus e Anima Genomics 
-                  rappresentano il nostro impegno nella prevenzione e nella qualità della vita.
-                </p>
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  Utilizziamo solo prodotti di eccellenza, riconosciuti a livello internazionale 
-                  per la loro efficacia e innovazione.
-                </p>
-                <p className="text-lg text-yellow-600 font-semibold">
-                  La salute è il nostro obiettivo, la tecnologia il nostro alleato.
-                </p>
-              </div>
-              <div className="rounded-lg overflow-hidden shadow-lg">
-                <img 
-                  src="/lovable-uploads/64478f32-a76d-4ef7-82d5-cc025d5896d2.png" 
-                  alt="Leadership e innovazione tecnologica"
-                  className="w-full h-80 object-cover"
-                />
-              </div>
             </div>
           </div>
         </div>
