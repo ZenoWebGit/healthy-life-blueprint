@@ -38,11 +38,11 @@ const Index = () => {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh.'
     },
     'Contatti': {
-      imageSrc: '/lovable-uploads/79250853-3926-4521-b9e5-7179d637b923.png',
+      imageSrc: '/lovable-uploads/8b68f672-0094-4ccb-84e5-c59aca2edc5c.png',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.'
     },
     'Formazione': {
-      imageSrc: '/lovable-uploads/79250853-3926-4521-b9e5-7179d637b923.png',
+      imageSrc: '/lovable-uploads/8b68f672-0094-4ccb-84e5-c59aca2edc5c.png',
       description: 'Al centro del nostro lavoro, poniamo la risorsa umana come protagonista assoluto, seguendola e prendendoci cura di essa in modo scrupoloso.'
     },
     'Coaching': {
@@ -112,7 +112,7 @@ const Index = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="/lovable-uploads/02571b68-c517-424b-b6d2-c91d82321a29.png" 
+                  src="/lovable-uploads/8b68f672-0094-4ccb-84e5-c59aca2edc5c.png" 
                   alt="Evento di formazione aziendale"
                   className="w-full h-80 object-cover"
                 />
