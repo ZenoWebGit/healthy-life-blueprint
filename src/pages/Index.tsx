@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -277,7 +278,7 @@ const Index = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
               <div className="order-2 lg:order-1 rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="/lovable-uploads/85a259f8-6146-4373-9dfa-ea202dec4ca2.png" 
+                  src="/lovable-uploads/c759b66a-c6a9-43dc-bdc1-0b14d5fb3237.png" 
                   alt="Sessione di coaching professionale"
                   className="w-full h-80 object-cover"
                 />
