@@ -1,12 +1,15 @@
 
 import { useState } from 'react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    contactReason: '',
+    cv: null as File | null
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -20,6 +23,26 @@ const ContactForm = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData({
+      ...formData,
+      contactReason: value
+    });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file && file.type === 'application/pdf') {
+      setFormData({
+        ...formData,
+        cv: file
+      });
+    } else if (file) {
+      alert('Si prega di caricare solo file PDF');
+      e.target.value = '';
+    }
   };
 
   return (
@@ -82,6 +105,40 @@ const ContactForm = () => {
                   required
                 />
               </div>
+
+              <div>
+                <label htmlFor="contactReason" className="block text-white font-medium mb-2">
+                  Motivi del contatto
+                </label>
+                <Select onValueChange={handleSelectChange} required>
+                  <SelectTrigger className="w-full px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white/50 outline-none bg-white">
+                    <SelectValue placeholder="Seleziona il motivo del contatto" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white">
+                    <SelectItem value="informazioni">Informazioni</SelectItem>
+                    <SelectItem value="candidatura">Candidatura</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {formData.contactReason === 'candidatura' && (
+                <div>
+                  <label htmlFor="cv" className="block text-white font-medium mb-2">
+                    Carica il tuo CV (solo formato PDF)
+                  </label>
+                  <input
+                    type="file"
+                    id="cv"
+                    name="cv"
+                    accept=".pdf"
+                    onChange={handleFileChange}
+                    className="w-full px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white/50 outline-none bg-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-red-700 hover:file:bg-red-100"
+                  />
+                  <p className="text-white/80 text-sm mt-1">
+                    Accettiamo solo file in formato PDF
+                  </p>
+                </div>
+              )}
               
               <div>
                 <label htmlFor="message" className="block text-white font-medium mb-2">
