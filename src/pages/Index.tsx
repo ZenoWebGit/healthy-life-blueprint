@@ -282,7 +282,7 @@ const Index = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">GreenTA</h3>
-                  <p className="text-gray-600 mb-4">presenti nel mondo dell'energia per casa tua e il tuo ufficio</p>
+                  <p className="text-gray-600 mb-4">Presenti nel mondo dell'energia per casa tua e il tuo ufficio</p>
                   <div className="text-center">
                     <Button 
                       onClick={scrollToContact}
