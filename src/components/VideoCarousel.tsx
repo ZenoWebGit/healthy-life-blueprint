@@ -17,7 +17,7 @@ const VideoCarousel = () => {
       id: 3, 
       title: "Eventi Aziendali", 
       description: "Conferenze e meeting internazionali",
-      image: "/lovable-uploads/2524bb98-c971-45e0-b910-a078e4ecc3e2.png"
+      image: "/lovable-uploads/3d348fdc-99a6-47af-897d-4acf7229e246.png"
     }
   ];
 
