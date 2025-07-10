@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import InfoModal from '../components/InfoModal';
 import ReviewsModal from '../components/ReviewsModal';
 import ProjectCarousel from '../components/ProjectCarousel';
+import GoogleReviews from '../components/GoogleReviews';
 import { Button } from '@/components/ui/button';
 
 const Index = () => {
@@ -244,6 +245,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Sezione Recensioni */}
+      <GoogleReviews />
 
       {/* Sezione Coaching */}
       <section id="coaching" className="py-16 bg-gray-50">
