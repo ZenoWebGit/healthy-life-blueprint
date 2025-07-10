@@ -70,6 +70,15 @@ const Index = () => {
     setReviewsModal({ isOpen: false, productName: '' });
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.querySelector('section:has(h2:contains("Form Contatti"))') || 
+                          document.querySelector('[class*="ContactForm"]') ||
+                          document.querySelector('form');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const handleOpenModal = (event: CustomEvent) => {
       openModal(event.detail);
@@ -142,10 +151,10 @@ const Index = () => {
                   <p className="text-gray-600 mb-4">Innovativo sistema di trattamento dell'acqua basato sulla tecnologia dell'iperfiltrazione.</p>
                   <div className="text-center">
                     <Button 
-                      onClick={() => openReviewsModal('Mondo Hydro')}
+                      onClick={scrollToContact}
                       className="bg-blue-600 hover:bg-blue-700 text-white"
                     >
-                      Guarda recensioni
+                      Contattaci
                     </Button>
                   </div>
                 </div>
@@ -164,10 +173,10 @@ const Index = () => {
                   <p className="text-gray-600 mb-4">Sfruttando le nanotecnologie, agiamo sul sistema cellulare con effetti antalgici e antiossidanti.</p>
                   <div className="text-center">
                     <Button 
-                      onClick={() => openReviewsModal('Biofarmantalgic Plus')}
+                      onClick={scrollToContact}
                       className="bg-blue-600 hover:bg-blue-700 text-white"
                     >
-                      Guarda recensioni
+                      Contattaci
                     </Button>
                   </div>
                 </div>
@@ -186,10 +195,10 @@ const Index = () => {
                   <p className="text-gray-600 mb-4">Marchio unico che ti consente di scegliere tra una vasta gamma di miscele, nella quantità e compatibilità che preferisci.</p>
                   <div className="text-center">
                     <Button 
-                      onClick={() => openReviewsModal('The Coffy Way')}
+                      onClick={scrollToContact}
                       className="bg-blue-600 hover:bg-blue-700 text-white"
                     >
-                      Guarda recensioni
+                      Contattaci
                     </Button>
                   </div>
                 </div>
@@ -211,10 +220,10 @@ const Index = () => {
                   <p className="text-gray-600 mb-4">Attraverso la tecnologia Active Pure, garantiamo un'aria più pulita negli ambienti interni.</p>
                   <div className="text-center">
                     <Button 
-                      onClick={() => openReviewsModal('Mondo Tecnologia Aria')}
+                      onClick={scrollToContact}
                       className="bg-blue-600 hover:bg-blue-700 text-white"
                     >
-                      Guarda recensioni
+                      Contattaci
                     </Button>
                   </div>
                 </div>
@@ -233,10 +242,10 @@ const Index = () => {
                   <p className="text-gray-600 mb-4">Ricerchiamo il sistema di riposo ideale per il benessere quotidiano.</p>
                   <div className="text-center">
                     <Button 
-                      onClick={() => openReviewsModal('Riposo')}
+                      onClick={scrollToContact}
                       className="bg-blue-600 hover:bg-blue-700 text-white"
                     >
-                      Guarda recensioni
+                      Contattaci
                     </Button>
                   </div>
                 </div>
@@ -255,10 +264,10 @@ const Index = () => {
                   <p className="text-gray-600 mb-4">Siamo leader nella genomica, all'avanguardia globalmente. Offriamo test del DNA avanzati e completi.</p>
                   <div className="text-center">
                     <Button 
-                      onClick={() => openReviewsModal('Anima Genomics')}
+                      onClick={scrollToContact}
                       className="bg-blue-600 hover:bg-blue-700 text-white"
                     >
-                      Guarda recensioni
+                      Contattaci
                     </Button>
                   </div>
                 </div>
@@ -277,10 +286,10 @@ const Index = () => {
                   <p className="text-gray-600 mb-4">presenti nel mondo dell'energia per casa tua e il tuo ufficio</p>
                   <div className="text-center">
                     <Button 
-                      onClick={() => openReviewsModal('GreenTA')}
+                      onClick={scrollToContact}
                       className="bg-blue-600 hover:bg-blue-700 text-white"
                     >
-                      Guarda recensioni
+                      Contattaci
                     </Button>
                   </div>
                 </div>
