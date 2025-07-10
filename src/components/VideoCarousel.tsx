@@ -1,10 +1,11 @@
+
 const VideoCarousel = () => {
   const videos = [
     { 
       id: 1, 
       title: "Formazione", 
       description: "Eventi formativi e team building",
-      image: "/lovable-uploads/d0deee4c-2c43-4b4f-aee4-b95f32bfb938.png"
+      image: "/lovable-uploads/203ab0e7-f79d-4ec2-8b21-711bd63155ba.png"
     },
     { 
       id: 2, 
@@ -38,11 +39,11 @@ const VideoCarousel = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
               onClick={() => handleCardClick(video.title)}
             >
-              <div className="aspect-video overflow-hidden">
+              <div className="aspect-video overflow-hidden bg-gray-50 flex items-center justify-center">
                 <img 
                   src={video.image} 
                   alt={video.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">
