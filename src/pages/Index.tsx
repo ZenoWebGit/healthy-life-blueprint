@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -68,6 +69,13 @@ const Index = () => {
 
   const closeReviewsModal = () => {
     setReviewsModal({ isOpen: false, productName: '' });
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contatti');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   useEffect(() => {
@@ -277,10 +285,10 @@ const Index = () => {
                   <p className="text-gray-600 mb-4">presenti nel mondo dell'energia per casa tua e il tuo ufficio</p>
                   <div className="text-center">
                     <Button 
-                      onClick={() => openReviewsModal('GreenTA')}
+                      onClick={scrollToContact}
                       className="bg-blue-600 hover:bg-blue-700 text-white"
                     >
-                      Guarda recensioni
+                      Contattaci
                     </Button>
                   </div>
                 </div>
@@ -486,7 +494,9 @@ const Index = () => {
       </section>
 
       <VideoCarousel />
-      <ContactForm />
+      <div id="contatti">
+        <ContactForm />
+      </div>
       <Footer />
 
       {/* Modali */}
