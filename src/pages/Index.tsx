@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -71,7 +70,6 @@ const Index = () => {
     setReviewsModal({ isOpen: false, productName: '' });
   };
 
-  // Ascolta gli eventi dal VideoCarousel
   useEffect(() => {
     const handleOpenModal = (event: CustomEvent) => {
       openModal(event.detail);
@@ -129,8 +127,8 @@ const Index = () => {
             <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
               I nostri Prodotti
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Prima riga */}
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              {/* Prima riga - 3 colonne */}
               <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="aspect-video overflow-hidden">
                   <img 
@@ -196,8 +194,10 @@ const Index = () => {
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Seconda riga */}
+            {/* Seconda riga - 4 colonne */}
+            <div className="grid md:grid-cols-4 gap-8">
               <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="aspect-video overflow-hidden">
                   <img 
@@ -256,6 +256,28 @@ const Index = () => {
                   <div className="text-center">
                     <Button 
                       onClick={() => openReviewsModal('Anima Genomics')}
+                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                    >
+                      Guarda recensioni
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/de4f3c79-5af1-4dc1-83c6-8e85f6afbe12.png" 
+                    alt="GreenTA"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">GreenTA</h3>
+                  <p className="text-gray-600 mb-4">presenti nel mondo dell'energia per casa tua e il tuo ufficio</p>
+                  <div className="text-center">
+                    <Button 
+                      onClick={() => openReviewsModal('GreenTA')}
                       className="bg-blue-600 hover:bg-blue-700 text-white"
                     >
                       Guarda recensioni
