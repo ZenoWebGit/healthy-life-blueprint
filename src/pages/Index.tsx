@@ -114,7 +114,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/203ab0e7-f79d-4ec2-8b21-711bd63155ba.png" 
                   alt="Evento di formazione aziendale"
-                  className="w-full h-80 object-cover"
+                  className="w-full h-80 object-contain bg-gray-50"
                 />
               </div>
             </div>
