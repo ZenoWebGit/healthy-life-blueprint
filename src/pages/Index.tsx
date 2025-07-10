@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -22,7 +21,7 @@ const Index = () => {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
     'Recruiting': {
-      imageSrc: '/lovable-uploads/d44afeb9-7f49-4c80-a82c-c737a0694352.png',
+      imageSrc: '/lovable-uploads/d1e4863b-0a95-495b-b71f-0bb9d61d1442.png',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris viverra veniam sit amet lacus cursus de congue. Proin tincidunt fermentum lorem, eu porta arcu pellentesque sed. Vestibulum sed magna at nunc commodo placerat.'
     },
     'Tecnologie': {
@@ -395,7 +394,7 @@ const Index = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="/lovable-uploads/d44afeb9-7f49-4c80-a82c-c737a0694352.png" 
+                  src="/lovable-uploads/d1e4863b-0a95-495b-b71f-0bb9d61d1442.png" 
                   alt="Team building e networking professionale"
                   className="w-full h-80 object-cover"
                 />
