@@ -6,7 +6,9 @@ import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import InfoModal from '../components/InfoModal';
 import ReviewsModal from '../components/ReviewsModal';
+import ProjectCarousel from '../components/ProjectCarousel';
 import { Button } from '@/components/ui/button';
+
 const Index = () => {
   const [selectedModal, setSelectedModal] = useState<string | null>(null);
   const [reviewsModal, setReviewsModal] = useState<{
@@ -284,8 +286,8 @@ const Index = () => {
               Progetti e Qualità
             </h2>
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-              <div className="order-2 lg:order-1 rounded-lg overflow-hidden shadow-lg">
-                <img src="/lovable-uploads/65a2fbdd-0a04-494f-ad6f-d7a40e650e52.png" alt="Grande evento aziendale con partecipanti internazionali" className="w-full h-80 object-cover" />
+              <div className="order-2 lg:order-1">
+                <ProjectCarousel />
               </div>
               <div className="order-1 lg:order-2">
                 <h3 className="text-2xl font-semibold text-blue-600 mb-4">
@@ -439,4 +441,5 @@ const Index = () => {
       <ReviewsModal isOpen={reviewsModal.isOpen} onClose={closeReviewsModal} productName={reviewsModal.productName} />
     </div>;
 };
+
 export default Index;
