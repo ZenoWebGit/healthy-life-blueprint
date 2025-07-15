@@ -112,9 +112,7 @@ const Index = () => {
                   in un percorso formativo strutturato. L'obiettivo è formare nuovi imprenditori autonomi, 
                   in grado di creare valore e replicare il nostro modello nelle proprie città.
                 </p>
-                <p className="text-lg text-blue-600 font-semibold">
-                  Un'opportunità concreta per costruire il proprio futuro professionale.
-                </p>
+                <p className="text-lg text-blue-600 font-semibold">Un’opportunità concreta per costruire la propria libertà finanziaria</p>
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img src="/lovable-uploads/203ab0e7-f79d-4ec2-8b21-711bd63155ba.png" alt="Evento di formazione aziendale" className="w-full h-80 object-contain bg-gray-50" />
