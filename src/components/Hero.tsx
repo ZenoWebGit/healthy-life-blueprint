@@ -1,4 +1,3 @@
-
 const Hero = () => {
   return (
     <section className="pt-32 pb-16 bg-gradient-to-br from-blue-50 to-white mt-20">
@@ -17,9 +16,7 @@ const Hero = () => {
           </div>
           
           <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
-            Healthy life srls è un azienda commerciale di vendita diretta strutturata e specializzata nella formazione di talenti e nella ricerca di risorse talentuose!
-            <br />
-            L'accademia è stata creata per formare i futuri imprenditori, è un percorso reale di crescita professionale basato su temi sensibili sul benessere, attraverso tutoring di tecniche di comunicazione e di vendita
+            Healthy Life è un'azienda commerciale che si occupa della vendita diretta e quindi dal produttore al consumatore di dispositivi e quant'altro riguardi il wellness, strutturata e specializzata nella ricerca di nuove risorse da rendere futuri talenti. All'interno vi è un'Accademy creata per formare nuovi imprenditori, un percorso reale di crescita professionale basato su tematiche molto sensibili sul benessere
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
