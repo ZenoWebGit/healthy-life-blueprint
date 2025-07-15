@@ -215,7 +215,7 @@ const Index = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Anima Genomics</h3>
-                  <p className="text-gray-600 mb-4">Abbiamo il miglior sistema di riposo in grafene per il benessere quotidiano.</p>
+                  <p className="text-gray-600 mb-4">Siamo leader nella genomica e mappatura del DNA offrendo i test più avanzati oggi esistenti.</p>
                   <div className="text-center">
                     <Button onClick={() => openReviewsModal('Anima Genomics')} className="bg-blue-600 hover:bg-blue-700 text-white">
                       Guarda recensioni
