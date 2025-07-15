@@ -16,7 +16,7 @@ const VideoCarousel = () => {
     { 
       id: 3, 
       title: "Eventi Aziendali", 
-      description: "Conferenze e meeting internazionali",
+      description: "Conferenze e meeting internazionali. Organizziamo eventi aziendali di alto livello per promuovere la crescita professionale e il networking. I nostri eventi sono progettati per creare valore e opportunità di business per tutti i partecipanti",
       image: "/lovable-uploads/2524bb98-c971-45e0-b910-a078e4ecc3e2.png"
     }
   ];
