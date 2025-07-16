@@ -1,4 +1,3 @@
-
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 interface ReviewsModalProps {
@@ -91,6 +90,31 @@ const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
                     preload="metadata"
                   >
                     <source src="https://www.biofarmantalgicplus.com/wp-content/uploads/2014/12/fasciano_rosa.mp4" type="video/mp4" />
+                    Il tuo browser non supporta la riproduzione video.
+                  </video>
+                </div>
+              </div>
+              
+              {/* Nuova riga con i due video embedded */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+                  <video 
+                    className="w-full h-full object-cover"
+                    controls
+                    preload="metadata"
+                  >
+                    <source src="http://zenoweb.it/testimonianzagiarre.mp4" type="video/mp4" />
+                    Il tuo browser non supporta la riproduzione video.
+                  </video>
+                </div>
+                
+                <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+                  <video 
+                    className="w-full h-full object-cover"
+                    controls
+                    preload="metadata"
+                  >
+                    <source src="http://zenoweb.it/testimonianzaudio.mp4" type="video/mp4" />
                     Il tuo browser non supporta la riproduzione video.
                   </video>
                 </div>
