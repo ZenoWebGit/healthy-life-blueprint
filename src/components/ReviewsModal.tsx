@@ -71,6 +71,7 @@ const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
             </>
           ) : isBiofarmantalgicPlus ? (
             <>
+              {/* First row with two horizontal videos */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
                   <video 
@@ -95,9 +96,9 @@ const ReviewsModal = ({ isOpen, onClose, productName }: ReviewsModalProps) => {
                 </div>
               </div>
               
-              {/* Nuova riga con i due video embedded */}
+              {/* Second row with one vertical video and one horizontal video */}
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+                <div className="aspect-[9/16] rounded-lg overflow-hidden bg-gray-100">
                   <video 
                     className="w-full h-full object-cover"
                     controls
