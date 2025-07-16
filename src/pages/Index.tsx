@@ -230,7 +230,7 @@ const Index = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">GreenTA</h3>
-                  <p className="text-gray-600 mb-4">Abbiamo scelto LENERGIA come fornitore poiché la sua esperienza nel settore le garanzie che offre sono in linea con gli standard di Healthy life, il nostro marchio Greenta è il risultato del nostro nuovo mondo.</p>
+                  <p className="text-gray-600 mb-4">Abbiamo scelto <strong>LENERGIA</strong> come fornitore poiché la sua esperienza nel settore le garanzie che offre sono in linea con gli standard di <strong>Healthy life</strong>, il nostro marchio <strong>Greenta</strong> è il risultato del nostro nuovo mondo.</p>
                   <div className="text-center">
                     <Button onClick={scrollToContact} className="bg-blue-600 hover:bg-blue-700 text-white">
                       Contattaci
