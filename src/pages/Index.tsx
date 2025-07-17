@@ -82,6 +82,11 @@ const Index = () => {
       });
     }
   };
+
+  const openHealthyLifeLink = () => {
+    window.open('https://beacons.ai/healthylifesrls?fbclid=PAZXh0bgNhZW0CMTEAAadA3kn5URCJFuHaXGYZ1xrtyK4DuMLS2UTVxzF-jG5J4RIyF2tndUjzm0CEyg_aem_s_jh-v8MUe4LERMSTByk_A', '_blank');
+  };
+
   useEffect(() => {
     const handleOpenModal = (event: CustomEvent) => {
       openModal(event.detail);
@@ -152,8 +157,8 @@ const Index = () => {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Biofarmantalgic Plus</h3>
                   <p className="text-gray-600 mb-4">Sfruttando le nanotecnologie, agiamo sul sistema cellulare con effetti antalgici e antiossidanti.</p>
                   <div className="text-center">
-                    <Button onClick={() => openReviewsModal('Biofarmantalgic Plus')} className="bg-blue-600 hover:bg-blue-700 text-white">
-                      Guarda recensioni
+                    <Button onClick={openHealthyLifeLink} className="bg-blue-600 hover:bg-blue-700 text-white">
+                      Contattaci
                     </Button>
                   </div>
                 </div>
