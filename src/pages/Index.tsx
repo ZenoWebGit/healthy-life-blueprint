@@ -112,7 +112,7 @@ const Index = () => {
                   in un percorso formativo strutturato. L'obiettivo è formare nuovi imprenditori autonomi, 
                   in grado di creare valore e replicare il nostro modello nelle proprie città.
                 </p>
-                <p className="text-lg text-blue-600 font-semibold">Un’opportunità concreta per costruire la propria libertà finanziaria.</p>
+                <p className="text-lg text-blue-600 font-semibold">Un'opportunità concreta per costruire la propria libertà finanziaria.</p>
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img src="/lovable-uploads/203ab0e7-f79d-4ec2-8b21-711bd63155ba.png" alt="Evento di formazione aziendale" className="w-full h-80 object-contain bg-gray-50" />
@@ -139,9 +139,15 @@ const Index = () => {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Mondo Hydro</h3>
                   <p className="text-gray-600 mb-4">Sistemi di filtrazione esistenti da più di 50 anni, adatti per la tua casa e per il tuo ufficio</p>
                   <div className="text-center">
-                    <Button onClick={() => openReviewsModal('Mondo Hydro')} className="bg-blue-600 hover:bg-blue-700 text-white">
-                      Guarda recensioni
-                    </Button>
+                    <a 
+                      href="https://beacons.ai/healthylifesrls?fbclid=PAZXh0bgNhZW0CMTEAAadA3kn5URCJFuHaXGYZ1xrtyK4DuMLS2UTVxzF-jG5J4RIyF2tndUjzm0CEyg_aem_s_jh-v8MUe4LERMSTByk_A"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                        Contattaci
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </div>
