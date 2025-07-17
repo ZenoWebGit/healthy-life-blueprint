@@ -92,6 +92,7 @@ const Index = () => {
       window.removeEventListener('openModal', handleOpenModal as EventListener);
     };
   }, []);
+
   return <div className="min-h-screen">
       <Header />
       <Hero />
@@ -236,9 +237,15 @@ const Index = () => {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Anima Genomics</h3>
                   <p className="text-gray-600 mb-4">Siamo leader nella genomica e mappatura del DNA offrendo i test più avanzati oggi esistenti.</p>
                   <div className="text-center">
-                    <Button onClick={() => openReviewsModal('Anima Genomics')} className="bg-blue-600 hover:bg-blue-700 text-white">
-                      Guarda recensioni
-                    </Button>
+                    <a 
+                      href="https://beacons.ai/healthylifesrls?fbclid=PAZXh0bgNhZW0CMTEAAadA3kn5URCJFuHaXGYZ1xrtyK4DuMLS2UTVxzF-jG5J4RIyF2tndUjzm0CEyg_aem_s_jh-v8MUe4LERMSTByk_A"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                        Contattaci
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </div>
