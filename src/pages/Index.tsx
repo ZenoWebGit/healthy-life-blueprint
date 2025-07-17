@@ -193,9 +193,15 @@ const Index = () => {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Mondo Tecnologia Aria</h3>
                   <p className="text-gray-600 mb-4">Attraverso la tecnologia Active Pure, garantiamo un'aria più pulita negli ambienti interni.</p>
                   <div className="text-center">
-                    <Button onClick={() => openReviewsModal('Mondo Tecnologia Aria')} className="bg-blue-600 hover:bg-blue-700 text-white">
-                      Guarda recensioni
-                    </Button>
+                    <a 
+                      href="https://beacons.ai/healthylifesrls?fbclid=PAZXh0bgNhZW0CMTEAAadA3kn5URCJFuHaXGYZ1xrtyK4DuMLS2UTVxzF-jG5J4RIyF2tndUjzm0CEyg_aem_s_jh-v8MUe4LERMSTByk_A"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                        Contattaci
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </div>
