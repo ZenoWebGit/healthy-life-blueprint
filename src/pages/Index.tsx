@@ -139,9 +139,7 @@ const Index = () => {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Mondo Hydro</h3>
                   <p className="text-gray-600 mb-4">Sistemi di filtrazione esistenti da più di 50 anni, adatti per la tua casa e per il tuo ufficio</p>
                   <div className="text-center">
-                    <Button onClick={() => openReviewsModal('Mondo Hydro')} className="bg-blue-600 hover:bg-blue-700 text-white">
-                      Guarda recensioni
-                    </Button>
+                    <Button onClick={() => openReviewsModal('Mondo Hydro')} className="bg-blue-600 hover:bg-blue-700 text-white">Contattaci</Button>
                   </div>
                 </div>
               </div>
