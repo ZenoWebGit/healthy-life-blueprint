@@ -9,6 +9,7 @@ import ReviewsModal from '../components/ReviewsModal';
 import ProjectCarousel from '../components/ProjectCarousel';
 import GoogleReviews from '../components/GoogleReviews';
 import { Button } from '@/components/ui/button';
+
 const Index = () => {
   const [selectedModal, setSelectedModal] = useState<string | null>(null);
   const [reviewsModal, setReviewsModal] = useState<{
@@ -214,9 +215,15 @@ const Index = () => {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Riposo</h3>
                   <p className="text-gray-600 mb-4">Abbiamo il miglior sistema di riposo in grafene per il benessere quotidiano.</p>
                   <div className="text-center">
-                    <Button onClick={() => openReviewsModal('Riposo')} className="bg-blue-600 hover:bg-blue-700 text-white">
-                      Guarda recensioni
-                    </Button>
+                    <a 
+                      href="https://beacons.ai/healthylifesrls?fbclid=PAZXh0bgNhZW0CMTEAAadA3kn5URCJFuHaXGYZ1xrtyK4DuMLS2UTVxzF-jG5J4RIyF2tndUjzm0CEyg_aem_s_jh-v8MUe4LERMSTByk_A"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                        Contattaci
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </div>
