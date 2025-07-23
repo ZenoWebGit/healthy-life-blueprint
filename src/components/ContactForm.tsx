@@ -23,6 +23,16 @@ const ContactForm = () => {
     try {
       console.log('Inizio invio form...');
       
+      // Validazione del campo motivo del contatto
+      if (!formData.contactReason) {
+        toast({
+          title: "Campo obbligatorio",
+          description: "Seleziona il motivo del contatto",
+          variant: "destructive",
+        });
+        return;
+      }
+      
       // Gestisce il CV se presente
       let cvFileName = "Nessuno";
       
@@ -196,7 +206,7 @@ const ContactForm = () => {
                 <label htmlFor="contactReason" className="block text-white font-medium mb-2">
                   Motivi del contatto
                 </label>
-                <Select onValueChange={handleSelectChange} required>
+                <Select onValueChange={handleSelectChange}>
                   <SelectTrigger className="w-full px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white/50 outline-none bg-white">
                     <SelectValue placeholder="Seleziona il motivo del contatto" />
                   </SelectTrigger>
