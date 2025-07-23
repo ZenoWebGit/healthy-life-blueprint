@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/lib/supabase';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -22,82 +21,27 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      console.log('Inizio invio form...');
-      
-      // Validazione del campo motivo del contatto
-      if (!formData.contactReason) {
-        toast({
-          title: "Campo obbligatorio",
-          description: "Seleziona il motivo del contatto",
-          variant: "destructive",
-        });
-        return;
-      }
-      
-      let cvUrl = "Nessuno";
-      
-      // Carica il CV su Supabase Storage se presente
-      if (formData.cv) {
-        console.log('CV presente, caricamento su Supabase...');
-        
-        try {
-          // Genera un nome file unico
-          const fileName = `${Date.now()}_${formData.cv.name}`;
-          
-          // Carica il file nella cartella "fiel"
-          const { data: uploadData, error: uploadError } = await supabase.storage
-            .from('fiel')
-            .upload(fileName, formData.cv, {
-              cacheControl: '3600',
-              upsert: false
-            });
+      // Prepara i dati per il webhook
+      const webhookData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        contactReason: formData.contactReason,
+        privacyConsent: formData.privacyConsent,
+        timestamp: new Date().toISOString(),
+        // Note: CV file handling would need additional processing for file upload
+        cvFileName: formData.cv?.name || null
+      };
 
-          if (uploadError) {
-            console.error('Errore caricamento file:', uploadError);
-            throw uploadError;
-          }
-
-          console.log('File caricato con successo:', uploadData.path);
-
-          // Ottieni l'URL pubblico del file
-          const { data: urlData } = supabase.storage
-            .from('fiel')
-            .getPublicUrl(uploadData.path);
-
-          cvUrl = urlData.publicUrl;
-          console.log('URL pubblico del CV:', cvUrl);
-
-        } catch (error) {
-          console.error('Errore durante il caricamento del CV:', error);
-          toast({
-            title: "Errore caricamento CV",
-            description: "Si è verificato un errore durante il caricamento del CV.",
-            variant: "destructive",
-          });
-          return;
-        }
-      }
-      
-      // Prepara i parametri per il webhook GET
-      const params = new URLSearchParams();
-      params.append('name', formData.name);
-      params.append('email', formData.email);
-      params.append('phone', formData.phone);
-      params.append('message', formData.message);
-      params.append('contactReason', formData.contactReason);
-      params.append('privacyConsent', formData.privacyConsent.toString());
-      params.append('timestamp', new Date().toISOString());
-      params.append('cvUrl', cvUrl);
-
-      const url = `https://carrierzeno.app.n8n.cloud/webhook-test/7671f5d9-cd15-4bc9-b772-c596025a27ab?${params.toString()}`;
-      console.log('URL finale:', url);
-
-      const response = await fetch(url, {
-        method: 'GET',
-        mode: 'no-cors',
-      });
-
-      console.log('Risposta ricevuta');
+      const response = await fetch('https://carrierzeno.app.n8n.cloud/webhook/7671f5d9-cd15-4bc9-b772-c596025a27ab', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(webhookData),
+});,
+     
 
       // Mostra messaggio di successo
       toast({
@@ -227,7 +171,7 @@ const ContactForm = () => {
                 <label htmlFor="contactReason" className="block text-white font-medium mb-2">
                   Motivi del contatto
                 </label>
-                <Select onValueChange={handleSelectChange}>
+                <Select onValueChange={handleSelectChange} required>
                   <SelectTrigger className="w-full px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white/50 outline-none bg-white">
                     <SelectValue placeholder="Seleziona il motivo del contatto" />
                   </SelectTrigger>
