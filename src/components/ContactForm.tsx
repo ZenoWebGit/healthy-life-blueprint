@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useToast } from '@/hooks/use-toast';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -12,11 +13,63 @@ const ContactForm = () => {
     cv: null as File | null,
     privacyConsent: false
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Qui andrà la logica per inviare il form
+    setIsSubmitting(true);
+
+    try {
+      // Prepara i dati per il webhook
+      const webhookData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        contactReason: formData.contactReason,
+        privacyConsent: formData.privacyConsent,
+        timestamp: new Date().toISOString(),
+        // Note: CV file handling would need additional processing for file upload
+        cvFileName: formData.cv?.name || null
+      };
+
+      const response = await fetch('https://carrierzeno.app.n8n.cloud/webhook/7671f5d9-cd15-4bc9-b772-c596025a27ab', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'no-cors',
+        body: JSON.stringify(webhookData),
+      });
+
+      // Mostra messaggio di successo
+      toast({
+        title: "Messaggio inviato con successo!",
+        description: "Ti contatteremo presto. Grazie per averci contattato.",
+      });
+
+      // Reset del form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        contactReason: '',
+        cv: null,
+        privacyConsent: false
+      });
+
+    } catch (error) {
+      console.error('Errore nell\'invio del form:', error);
+      toast({
+        title: "Errore nell'invio",
+        description: "Si è verificato un errore. Riprova più tardi.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -181,9 +234,10 @@ const ContactForm = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                  disabled={isSubmitting}
+                  className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Invia
+                  {isSubmitting ? 'Invio in corso...' : 'Invia'}
                 </button>
               </div>
             </form>
