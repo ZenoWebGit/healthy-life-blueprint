@@ -21,26 +21,18 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Gestisce l'upload del CV se presente
+      // Gestisce il CV se presente
       let cvFileName = "Nessuno";
+      let cvData = null;
       
       if (formData.cv) {
-        // Crea FormData per l'upload del file
-        const uploadFormData = new FormData();
-        uploadFormData.append('file', formData.cv);
-        
-        // Upload del file
-        const uploadResponse = await fetch('https://carrierzeno.app.n8n.cloud/webhook-test/upload-cv', {
-          method: 'POST',
-          body: uploadFormData
+        cvFileName = formData.cv.name;
+        // Converte il file in base64
+        const reader = new FileReader();
+        cvData = await new Promise((resolve) => {
+          reader.onload = () => resolve(reader.result);
+          reader.readAsDataURL(formData.cv);
         });
-        
-        if (uploadResponse.ok) {
-          const uploadResult = await uploadResponse.json();
-          cvFileName = uploadResult.fileUrl || uploadResult.url || formData.cv.name;
-        } else {
-          throw new Error('Errore nell\'upload del CV');
-        }
       }
 
       // Prepara i dati per il webhook
@@ -52,7 +44,8 @@ const ContactForm = () => {
         contactReason: formData.contactReason,
         privacyConsent: formData.privacyConsent,
         timestamp: new Date().toISOString(),
-        cvFileName: cvFileName
+        cvFileName: cvFileName,
+        cvData: cvData
       };
 
       // Crea i parametri URL per la richiesta GET
@@ -65,6 +58,9 @@ const ContactForm = () => {
       params.append('privacyConsent', webhookData.privacyConsent.toString());
       params.append('timestamp', webhookData.timestamp);
       params.append('cvFileName', webhookData.cvFileName);
+      if (cvData) {
+        params.append('cvData', cvData as string);
+      }
 
       const response = await fetch(`https://carrierzeno.app.n8n.cloud/webhook-test/7671f5d9-cd15-4bc9-b772-c596025a27ab?${params.toString()}`, {
         method: 'GET',
