@@ -35,12 +35,12 @@ const ContactForm = () => {
       };
 
       const response = await fetch('https://carrierzeno.app.n8n.cloud/webhook/7671f5d9-cd15-4bc9-b772-c596025a27ab', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(webhookData),
-});,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookData),
+      });
      
 
       // Mostra messaggio di successo
