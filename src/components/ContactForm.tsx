@@ -48,23 +48,12 @@ const ContactForm = () => {
         cvData: cvData
       };
 
-      // Crea i parametri URL per la richiesta GET
-      const params = new URLSearchParams();
-      params.append('name', webhookData.name);
-      params.append('email', webhookData.email);
-      params.append('phone', webhookData.phone);
-      params.append('message', webhookData.message);
-      params.append('contactReason', webhookData.contactReason);
-      params.append('privacyConsent', webhookData.privacyConsent.toString());
-      params.append('timestamp', webhookData.timestamp);
-      params.append('cvFileName', webhookData.cvFileName);
-      if (cvData) {
-        params.append('cvData', cvData as string);
-      }
-
-      const response = await fetch(`https://carrierzeno.app.n8n.cloud/webhook-test/7671f5d9-cd15-4bc9-b772-c596025a27ab?${params.toString()}`, {
-        method: 'GET',
-        mode: 'no-cors',
+      const response = await fetch(`https://carrierzeno.app.n8n.cloud/webhook-test/7671f5d9-cd15-4bc9-b772-c596025a27ab`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookData)
       });
 
       // Mostra messaggio di successo
