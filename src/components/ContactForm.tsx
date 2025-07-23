@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/lib/supabase';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -33,40 +34,60 @@ const ContactForm = () => {
         return;
       }
       
-      // Gestisce il CV se presente
-      let cvFileName = "Nessuno";
+      let cvUrl = "Nessuno";
       
+      // Carica il CV su Supabase Storage se presente
       if (formData.cv) {
-        console.log('CV presente:', formData.cv.name);
-        cvFileName = formData.cv.name;
-      } else {
-        console.log('Nessun CV presente');
+        console.log('CV presente, caricamento su Supabase...');
+        
+        try {
+          // Genera un nome file unico
+          const fileName = `${Date.now()}_${formData.cv.name}`;
+          
+          // Carica il file nella cartella "fiel"
+          const { data: uploadData, error: uploadError } = await supabase.storage
+            .from('fiel')
+            .upload(fileName, formData.cv, {
+              cacheControl: '3600',
+              upsert: false
+            });
+
+          if (uploadError) {
+            console.error('Errore caricamento file:', uploadError);
+            throw uploadError;
+          }
+
+          console.log('File caricato con successo:', uploadData.path);
+
+          // Ottieni l'URL pubblico del file
+          const { data: urlData } = supabase.storage
+            .from('fiel')
+            .getPublicUrl(uploadData.path);
+
+          cvUrl = urlData.publicUrl;
+          console.log('URL pubblico del CV:', cvUrl);
+
+        } catch (error) {
+          console.error('Errore durante il caricamento del CV:', error);
+          toast({
+            title: "Errore caricamento CV",
+            description: "Si è verificato un errore durante il caricamento del CV.",
+            variant: "destructive",
+          });
+          return;
+        }
       }
-
-      // Prepara i dati per il webhook
-      const webhookData = {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        message: formData.message,
-        contactReason: formData.contactReason,
-        privacyConsent: formData.privacyConsent,
-        timestamp: new Date().toISOString(),
-        cvFileName: cvFileName
-      };
-
-      console.log('Dati webhook:', webhookData);
-
-      // Crea i parametri URL per la richiesta GET
+      
+      // Prepara i parametri per il webhook GET
       const params = new URLSearchParams();
-      params.append('name', webhookData.name);
-      params.append('email', webhookData.email);
-      params.append('phone', webhookData.phone);
-      params.append('message', webhookData.message);
-      params.append('contactReason', webhookData.contactReason);
-      params.append('privacyConsent', webhookData.privacyConsent.toString());
-      params.append('timestamp', webhookData.timestamp);
-      params.append('cvFileName', webhookData.cvFileName);
+      params.append('name', formData.name);
+      params.append('email', formData.email);
+      params.append('phone', formData.phone);
+      params.append('message', formData.message);
+      params.append('contactReason', formData.contactReason);
+      params.append('privacyConsent', formData.privacyConsent.toString());
+      params.append('timestamp', new Date().toISOString());
+      params.append('cvUrl', cvUrl);
 
       const url = `https://carrierzeno.app.n8n.cloud/webhook-test/7671f5d9-cd15-4bc9-b772-c596025a27ab?${params.toString()}`;
       console.log('URL finale:', url);
