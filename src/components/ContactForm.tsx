@@ -47,7 +47,7 @@ const ContactForm = () => {
         params.append('cvFileName', webhookData.cvFileName);
       }
 
-      const response = await fetch(`https://carrierzeno.app.n8n.cloud/webhook/7671f5d9-cd15-4bc9-b772-c596025a27ab?${params.toString()}`, {
+      const response = await fetch(`https://carrierzeno.app.n8n.cloud/webhook-test/7671f5d9-cd15-4bc9-b772-c596025a27ab?${params.toString()}`, {
         method: 'GET',
         mode: 'no-cors',
       });
