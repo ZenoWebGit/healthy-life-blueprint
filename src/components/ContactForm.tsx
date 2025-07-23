@@ -21,6 +21,28 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
+      // Gestisce l'upload del CV se presente
+      let cvFileName = "Nessuno";
+      
+      if (formData.cv) {
+        // Crea FormData per l'upload del file
+        const uploadFormData = new FormData();
+        uploadFormData.append('file', formData.cv);
+        
+        // Upload del file
+        const uploadResponse = await fetch('https://carrierzeno.app.n8n.cloud/webhook-test/upload-cv', {
+          method: 'POST',
+          body: uploadFormData
+        });
+        
+        if (uploadResponse.ok) {
+          const uploadResult = await uploadResponse.json();
+          cvFileName = uploadResult.fileUrl || uploadResult.url || formData.cv.name;
+        } else {
+          throw new Error('Errore nell\'upload del CV');
+        }
+      }
+
       // Prepara i dati per il webhook
       const webhookData = {
         name: formData.name,
@@ -30,8 +52,7 @@ const ContactForm = () => {
         contactReason: formData.contactReason,
         privacyConsent: formData.privacyConsent,
         timestamp: new Date().toISOString(),
-        // Note: CV file handling would need additional processing for file upload
-        cvFileName: formData.cv?.name || null
+        cvFileName: cvFileName
       };
 
       // Crea i parametri URL per la richiesta GET
@@ -43,9 +64,7 @@ const ContactForm = () => {
       params.append('contactReason', webhookData.contactReason);
       params.append('privacyConsent', webhookData.privacyConsent.toString());
       params.append('timestamp', webhookData.timestamp);
-      if (webhookData.cvFileName) {
-        params.append('cvFileName', webhookData.cvFileName);
-      }
+      params.append('cvFileName', webhookData.cvFileName);
 
       const response = await fetch(`https://carrierzeno.app.n8n.cloud/webhook-test/7671f5d9-cd15-4bc9-b772-c596025a27ab?${params.toString()}`, {
         method: 'GET',
