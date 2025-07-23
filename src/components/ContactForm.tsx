@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -33,12 +34,52 @@ const ContactForm = () => {
         return;
       }
       
-      // Gestisce il CV se presente
-      let cvFileName = "Nessuno";
+      // Gestisce l'upload del CV su Supabase se presente
+      let cvUrl = "Nessuno";
       
       if (formData.cv) {
-        console.log('CV presente:', formData.cv.name);
-        cvFileName = formData.cv.name;
+        console.log('CV presente, caricamento su Supabase:', formData.cv.name);
+        
+        // Genera un nome univoco per il file
+        const timestamp = Date.now();
+        const fileName = `cv_${timestamp}_${formData.cv.name}`;
+        
+        try {
+          // Upload del file su Supabase Storage
+          const { data: uploadData, error: uploadError } = await supabase.storage
+            .from('cv-uploads')
+            .upload(fileName, formData.cv, {
+              cacheControl: '3600',
+              upsert: false
+            });
+
+          if (uploadError) {
+            console.error('Errore upload CV:', uploadError);
+            toast({
+              title: "Errore nell'upload del CV",
+              description: uploadError.message,
+              variant: "destructive",
+            });
+            return;
+          }
+
+          // Ottieni l'URL pubblico del file
+          const { data: { publicUrl } } = supabase.storage
+            .from('cv-uploads')
+            .getPublicUrl(fileName);
+
+          cvUrl = publicUrl;
+          console.log('CV caricato con successo:', cvUrl);
+          
+        } catch (error) {
+          console.error('Errore durante l\'upload del CV:', error);
+          toast({
+            title: "Errore nell'upload del CV",
+            description: "Si è verificato un errore durante l'upload del CV.",
+            variant: "destructive",
+          });
+          return;
+        }
       } else {
         console.log('Nessun CV presente');
       }
@@ -52,7 +93,7 @@ const ContactForm = () => {
         contactReason: formData.contactReason,
         privacyConsent: formData.privacyConsent,
         timestamp: new Date().toISOString(),
-        cvFileName: cvFileName
+        cvUrl: cvUrl
       };
 
       console.log('Dati webhook:', webhookData);
@@ -66,7 +107,7 @@ const ContactForm = () => {
       params.append('contactReason', webhookData.contactReason);
       params.append('privacyConsent', webhookData.privacyConsent.toString());
       params.append('timestamp', webhookData.timestamp);
-      params.append('cvFileName', webhookData.cvFileName);
+      params.append('cvUrl', webhookData.cvUrl);
 
       const url = `https://carrierzeno.app.n8n.cloud/webhook-test/7671f5d9-cd15-4bc9-b772-c596025a27ab?${params.toString()}`;
       console.log('URL finale:', url);
