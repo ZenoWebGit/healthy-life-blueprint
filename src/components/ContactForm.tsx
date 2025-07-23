@@ -113,7 +113,7 @@ const ContactForm = () => {
       params.append('timestamp', webhookData.timestamp);
       params.append('cvUrl', webhookData.cvUrl);
 
-      const url = `https://carrierzeno.app.n8n.cloud/webhook-test/7671f5d9-cd15-4bc9-b772-c596025a27ab?${params.toString()}`;
+      const url = `https://carrierzeno.app.n8n.cloud/webhook/7671f5d9-cd15-4bc9-b772-c596025a27ab?${params.toString()}`;
       console.log('URL finale:', url);
 
       const response = await fetch(url, {
