@@ -40,9 +40,13 @@ const ContactForm = () => {
       if (formData.cv) {
         console.log('CV presente, caricamento su Supabase:', formData.cv.name);
         
-        // Genera un nome univoco per il file
+        // Genera un nome univoco per il file, sanificando il nome originale
         const timestamp = Date.now();
-        const fileName = `cv_${timestamp}_${formData.cv.name}`;
+        const sanitizedName = formData.cv.name
+          .toLowerCase()
+          .replace(/[^a-z0-9.]/g, '_') // Sostituisce caratteri speciali con underscore
+          .replace(/_{2,}/g, '_'); // Rimuove underscore multipli consecutivi
+        const fileName = `cv_${timestamp}_${sanitizedName}`;
         
         try {
           // Upload del file su Supabase Storage
