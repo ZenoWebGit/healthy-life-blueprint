@@ -21,18 +21,16 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
+      console.log('Inizio invio form...');
+      
       // Gestisce il CV se presente
       let cvFileName = "Nessuno";
-      let cvData = null;
       
       if (formData.cv) {
+        console.log('CV presente:', formData.cv.name);
         cvFileName = formData.cv.name;
-        // Converte il file in base64
-        const reader = new FileReader();
-        cvData = await new Promise((resolve) => {
-          reader.onload = () => resolve(reader.result);
-          reader.readAsDataURL(formData.cv);
-        });
+      } else {
+        console.log('Nessun CV presente');
       }
 
       // Prepara i dati per il webhook
@@ -44,17 +42,31 @@ const ContactForm = () => {
         contactReason: formData.contactReason,
         privacyConsent: formData.privacyConsent,
         timestamp: new Date().toISOString(),
-        cvFileName: cvFileName,
-        cvData: cvData
+        cvFileName: cvFileName
       };
 
-      const response = await fetch(`https://carrierzeno.app.n8n.cloud/webhook-test/7671f5d9-cd15-4bc9-b772-c596025a27ab`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(webhookData)
+      console.log('Dati webhook:', webhookData);
+
+      // Crea i parametri URL per la richiesta GET
+      const params = new URLSearchParams();
+      params.append('name', webhookData.name);
+      params.append('email', webhookData.email);
+      params.append('phone', webhookData.phone);
+      params.append('message', webhookData.message);
+      params.append('contactReason', webhookData.contactReason);
+      params.append('privacyConsent', webhookData.privacyConsent.toString());
+      params.append('timestamp', webhookData.timestamp);
+      params.append('cvFileName', webhookData.cvFileName);
+
+      const url = `https://carrierzeno.app.n8n.cloud/webhook-test/7671f5d9-cd15-4bc9-b772-c596025a27ab?${params.toString()}`;
+      console.log('URL finale:', url);
+
+      const response = await fetch(url, {
+        method: 'GET',
+        mode: 'no-cors',
       });
+
+      console.log('Risposta ricevuta');
 
       // Mostra messaggio di successo
       toast({
